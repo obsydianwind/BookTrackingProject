@@ -1,0 +1,13 @@
+﻿<h1>Adding to your recommendations</h1>
+
+<form ng-submit="controller.saveRecBook()">
+    <div>
+        <label>Title</label>
+        <input placeholder="Title" ng-model="controller.recommend.title" />
+    </div>
+    <div>
+        <label>Author</label>
+        <input placeholder="Author" ng-model="controller.recommend.author" />
+    </div>
+    <input type="submit" class="btn btn-sm btn-primary" value="Add Book" />
+</form>

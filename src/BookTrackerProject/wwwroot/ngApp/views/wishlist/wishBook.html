@@ -1,0 +1,31 @@
+﻿<h1>This is your Wishlist</h1>
+
+
+<br />
+<br />
+<a ui-sref="addWishBook" class="btn btn-primary">Add A Book</a>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="wish in controller.wishes">
+            <td>{{wish.title}}</td>
+            <td>{{wish.author}}</td>
+            <td>{{wish.price}}</td>
+            <td>{{wish.location}}</td>
+            <td><img src="{{wish.image}}" height="100" width="100"/></td>
+            <td><a ng-href="/updateWishBook/{{wish.id}}" class="btn btn-sm btn-warning">Update</a></td>
+            <td><a ng-href="/deleteWishBook/{{wish.id}}" class="btn btn-sm btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

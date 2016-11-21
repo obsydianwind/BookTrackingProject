@@ -1,0 +1,59 @@
+<html ng-app="BookTrackerProject">
+<head>
+    <title>BookTrackerProject</title>
+    <img src="~/images/BookTrackerBanner.jpg" id="banner" />
+    @*<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />*@
+    <link href="~/bower_components/boostrap/dist/css/bootstrap1.css" rel="stylesheet" />
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap2.css" rel="stylesheet" />
+    <link href="~/css/myStyle.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body ng-controller="AccountController as account">
+    <div class="container">
+        @*<h1>BookTrackerProject</h1>*@
+        <div>
+            <a href="/">Home</a>
+            /<a href="/about">About</a>/
+            <div ng-show="account.isLoggedIn()">
+                <a href="/ownBook">Own</a>/
+            </div>
+            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+            <div ng-show="account.isLoggedIn()">
+                [{{account.getUserName()}}]
+            </div>
+        </div>
+        @*<a href="/recBooks">Recommendation</a>/
+        <a href="/wishBook">WishList</a>*@
+        @*<a href="/login" ng-show="!account.isLoggedIn()">Login</a>
+        <a href="/userPage">User Page</a>/*@
+        <hr />
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
+    <script src="~/bower_components/filepicker-js/filepicker.js"></script>
+
+
+    <!-- App Files-->
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+    <script src="/ngApp/controllers/ownController.js"></script>
+    <script src="/ngApp/controllers/recommendController.js"></script>
+
+
+    <!-- Security -->
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<head>
+    <link href="../../../css/myStyle.css" rel="stylesheet" />
+</head>
+<h1>Owned</h1>
+<p>
+    This is where you will be able to track the inventory of books that you currently have ownership of. Please feel free to update or delete anytime you wish.
+</p>
+
+
+<br />
+<br />
+
+<a ui-sref="addBook" class="btn btn-primary">Add Book</a>
+
+<br />
+<br />
+
+<table id="tHome" class="table table-bordered table-striped ">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="book in controller.books">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.location}}</td>
+            <td><img src="{{book.image}}" height="100" width="100" /></td>
+            <td><a ng-href="/updateBook/{{book.id}}" class="btn btn-sm btn-warning">Update</a></td>
+            <td><a ng-href="/deleteBook/{{book.id}}" class="btn btn-sm btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

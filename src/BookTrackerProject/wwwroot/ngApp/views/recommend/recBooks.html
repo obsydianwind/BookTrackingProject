@@ -1,0 +1,27 @@
+﻿<h1>This is your recommendations</h1>
+
+
+
+<br />
+<br />
+
+<a ui-sref="addRecBook" class="btn btn-primary">Add Book</a>
+<br />
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="recommend in controller.recommends">
+            <td>{{recommend.title}}</td>
+            <td>{{recommend.author}}</td>
+            <td><a ng-href="/updateRecBook/{{recommend.id}}" class="btn btn-sm btn-warning">Update</a></td>
+            <td><a ng-href="/deleteRecBook/{{recommend.id}}" class="btn btn-sm btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

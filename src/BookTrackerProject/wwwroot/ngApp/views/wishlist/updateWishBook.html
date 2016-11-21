@@ -1,0 +1,21 @@
+﻿<h1>Updating your Wishlist</h1>
+
+<form ng-submit="controller.saveWishBook()">
+    <div>
+        <label>Title</label>
+        <input placeholder="Title" ng-model="controller.wish.title" />
+    </div>
+    <div>
+        <label>Author</label>
+        <input placeholder="Author" ng-model="controller.wish.author" />
+    </div>
+    <div>
+        <label>Price</label>
+        <input placeholder="Price" ng-model="controller.wish.price" />
+    </div>
+    <div>
+        <label>Location</label>
+        <input placeholder="Location" ng-model="controller.wish.location" />
+    </div>
+    <input type="submit" class="btn btn-sm btn-warning" value="Update WishList" />
+</form>
